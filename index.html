@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globe Shops - Connexion</title>
+  <link rel="stylesheet" href="connect.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpg" alt="Globe Shops Logo">
+    </div>
+    <h3>Bienvenue sur Globe Shops</h3>
+    <hr>
+    <p class="sms-form">CHOISISSEZ UNE OPTION POUR VOUS CONNECTER</p>
+    <hr>
+    
+    <form class="form" id="loginForm" action="#" method="post">
+      <input type="email" placeholder="E-mail" id="email" >
+      <input type="tel" placeholder="WhatsApp" id="whatsapp" >
+      <div id="error"></div>
+      <button type="submit">SE CONNECTER</button>
+    </form>
+    
+    <div class="about">
+      <h5>En savoir plus</h5>
+      <p>En collaboration avec Amazon et TravelPayouts, Globe Shops vous permet de :</p>
+      <ul>
+        <li>Faire vos achats en ligne (produits, matériels, divers...)</li>
+        <li>Réserver en ligne (restaurants, vols, hôtels, transports...)</li>
+        <li>Profiter de divertissements (films, livres, etc.)</li>
+      </ul>
+    </div>
+    <footer>Copyright © 2025 <img src="logo.jpg" width="11px"> Globe Shops</footer>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+    // Initialisation de Supabase (⚠️ Supprime la virgule après la clé API)
+    const supabase = createClient(
+      'https://dsxrfazhgfziaclyerpb.supabase.co', // Remplace par ton URL Supabase
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzeHJmYXpoZ2Z6aWFjbHllcnBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk1Mjc1MDIsImV4cCI6MjA1NTEwMzUwMn0.YQTz4mmPiSWA7OQz41ZSbk6JciiA8V-cyK3frm7t7tU' // Remplace par ta clé publique (⚠️ Plus de virgule après)
+    );
+
+    // Vérifie si l'utilisateur est déjà connecté
+    async function checkSession() {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (error) {
+        console.error('Erreur lors de la récupération de la session:', error);
+        return;
+      }
+
+      if (data.session) {
+        // Si une session existe, redirige vers la 2ème page
+        window.location.href = "accueil.html";
+      }
+    }
+
+    // Vérifie à chaque chargement de la page
+    checkSession();
+  </script>
+  
+  <script src="connect.js"></script>
+</body>
+</html>

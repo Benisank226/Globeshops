@@ -1,0 +1,100 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 15px;
+  color :#FFA131;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.sms-form {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size :13px ;
+  
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline :none ;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family :fantasy ;
+}
+
+.form button:hover {
+  background: #003d82;
+}
+
+#error {
+  color: red;
+  margin-bottom: 10px;
+  font-family :fantasy ;
+}
+
+.about {
+  margin-top: 20px;
+  font-family :fantasy ;
+}
+
+.about h5 {
+  margin-bottom: 10px;
+}
+
+.about ul {
+  text-align: left;
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+  font-family :fantasy ;
+}
+
+
